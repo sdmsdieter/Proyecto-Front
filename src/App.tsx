@@ -1,35 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
+import Home from './pages/Home_pag_principal'
+// import NuevaPagina from './pages/Nueva_pagina'
+import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path='/project/:id' element={<ProjectDetail />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
-
+// OJO
+// Tailwind CSS is a utility-first CSS framework that provides a set of pre-defined classes to help you style your HTML elements quickly and efficiently. 
+// It allows you to apply styles directly in your HTML using class names, which can lead to faster development and more maintainable code.
+// Pedir siempre documentacion a la ia
 export default App
