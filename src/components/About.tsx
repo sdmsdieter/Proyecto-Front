@@ -1,5 +1,6 @@
 export default function About() {
   return (
+    // afsdfd
     <section id='about' className='about-section'>
       <div className='about-left'>
         <p className='section-label'>About me</p>
